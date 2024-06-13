@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TvzNews</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <header>
+        <h1>TvzNews</h1>
+        <div class="bottom-bar">
+            <p>Fri, June 13, 2024</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <div class="vl"></div>
+                <li><a href="kategorija.php?id=Sport">Sport</a></li>
+                <div class="vl"></div>
+                <li><a href="kategorija.php?id=Kultura">Kultura</a></li>
+                <div class="vl"></div>
+                <li><a href="kategorija.php?id=Politika">Politika</a></li>
+                <div class="vl"></div>
+                <li><a href="kategorija.php?id=Zabava">Zabava</a></li>
+                <div class="vl"></div>
+                <li><a href="administracija.php">Administracija</a></li>
+                <div class="vl"></div>
+                <li><a href="unos.html">Unos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <form name="forma" class="forma" action="skripta.php" method="post" enctype="multipart/form-data">
+
+            <span id="poruka-naslov" class="poruka"></span>
+            <label for="naslov">Naslov vijesti:</label>
+            <input type="text" name="naslov" id="naslov" placeholder="Naslov vijesti" style="padding: 10px;">
+
+            <span id="poruka-about" class="poruka"></span>
+            <label for="about" style="margin: 10px 0 5px;">Kratki sadržaj vijesti (do 100 znakova):</label>
+            <textarea name="about" id="about" cols="30" rows="10" placeholder="Kratki sadržaj vijesti" autocomplete="on" style="padding: 10px;"></textarea>
+
+            <span id="poruka-sadrzaj" class="poruka"></span>
+            <label for="sadrzaj" style="margin: 10px 0 5px;">Sadržaj vijesti:</label>
+            <textarea name="sadrzaj" id="sadrzaj" cols="30" rows="20" placeholder="Sadržaj vijesti" style="padding: 10px;"></textarea>
+
+            <span id="poruka-slika" class="poruka"></span>
+            <label for="slika" style="margin: 15px 0 0px;">Slika: </label>
+            <input type="file" name="slika" id="slika" accept="image/jpg,image/gif,image/png" style="padding: 10px;">
+
+            <span id="poruka-kategorija" class="poruka"></span>
+            <label for="kategorija" style="margin: 15px 0 0px;">Kategorija vijesti:</label>
+                <select name="kategorija" id="kategorija" >
+                    <option value="" disabled selected>Odabir kategorije</option>
+                    <option value="sport">Sport</option>
+                    <option value="kultura">Kultura</option>
+                    <option value="politika">Politika</option>
+                    <option value="showbiz">Showbiz</option>	
+                </select>
+
+            <label for="arhiva"  style="margin: 5px 0 0px;">Spremiti u arhivu: 
+                <input type="checkbox" name="arhiva" id="arhiva" style="margin-left: 10px;">
+            </label>
+            
+            <div class="buttons">
+                <button name="submit" type="submit" id="slanje">Unesi vijest</button>
+                <button name="reset" type="reset">Poništi vijest</button>
+            </div>
+        </form>
+    </main>
+    
+    <footer>
+        <p>Marin Borevković</p>
+        <p>mborevkov@tvz.hr</p>
+        <p>2024</p>
+    </footer>
+<script>
+    document.getElementById("slanje").onclick = function(event)
+    {
+        
+       
+        var poruka_naslov = document.getElementById("poruka-naslov");
+        var naslov = document.getElementById("naslov");
+        var slanjeForme = true;
+        console.log(slanjeForme);
+       
+        var about = document.getElementById("about");
+        var sadrzaj = document.getElementById("sadrzaj");
+        var slika = document.getElementById("slika");
+        var kategorija = document.getElementById("kategorija");
+       
+        var poruka_about = document.getElementById("poruka-about");
+        var poruka_sadrzaj = document.getElementById("poruka-sadrzaj");
+        var poruka_slika = document.getElementById("poruka-slika");
+        var poruka_kategorija = document.getElementById("poruka-kategorija");
+
+       if(naslov.value.length < 5 || naslov.value.length > 30)
+        {
+            slanjeForme = false;
+            poruka_naslov.innerHTML = "Naslov vijesti mora imati između 5 i 30 znakova";
+            naslov.style.border = "1px dashed red";
+            
+        }else
+        {
+            poruka_naslov.innerHTML = "";
+            naslov.style.border = "1px solid green";
+        }
+       if(about.value.length < 10 || about.value.length > 100)
+        {
+            poruka_about.innerHTML = "Kratki sadržaj mora imati između 10 i 100 znakova";
+            about.style.border = "1px dashed red";
+            slanjeForme = false;
+        }
+        else
+        {
+            poruka_about.innerHTML = "";
+            about.style.border = "1px solid green";
+        }
+        if(sadrzaj.value.length == 0)
+        {
+            poruka_sadrzaj.innerHTML = "Sadržaj mora biti unesen";
+            sadrzaj.style.border = "1px dashed red";
+            slanjeForme = false;
+        }
+        else
+        {
+            poruka_sadrzaj.innerHTML = "";
+            sadrzaj.style.border = "1px solid green";
+        }
+        if(slika.value.length == 0)
+        {
+            poruka_slika.innerHTML = "Slika mora biti unesena";
+            slika.style.border = "1px dashed red";
+            slanjeForme = false;
+        }
+        else
+        {
+            poruka_slika.innerHTML = "";
+            slika.style.border = "1px solid green";
+        }
+        if(kategorija.value == 0)
+        {
+            poruka_kategorija.innerHTML = "Kategorija mora biti odabrana";
+            kategorija.style.border = "1px dashed red";
+            slanjeForme = false;
+        }
+        else
+        {
+            poruka_kategorija.innerHTML = "";
+            kategorija.style.border = "1px solid green";
+        }
+        if(slanjeForme != true)
+        {
+            event.preventDefault();
+        }
+        
+    }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TvzNews</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <header>
+        <h1>TvzNews</h1>
+        <div class="bottom-bar">
+            <p>Fri, June 13, 2024</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <div class="vl"></div>
+                <li><a href="kategorija.php?id=Sport">Sport</a></li>
+                <div class="vl"></div>
+                <li><a href="kategorija.php?id=Kultura">Kultura</a></li>
+                <div class="vl"></div>
+                <li><a href="kategorija.php?id=Politika">Politika</a></li>
+                <div class="vl"></div>
+                <li><a href="kategorija.php?id=Zabava">Zabava</a></li>
+                <div class="vl"></div>
+                <li><a href="administracija.php">Administracija</a></li>
+                <div class="vl"></div>
+                <li><a href="unos.html">Unos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form class='registracija' action="registracija.php" method='POST'>
+        <span id="porukaIme" class="bojaPoruke"></span>
+        <input type='text' id='ime' name='ime' placeholder='Ime'>
+
+        <span id="porukaPrezime" class="bojaPoruke"></span>
+        <input type='text' id='prezime' name='prezime' placeholder='Prezime'>
+
+        <span id="porukaUsername" class="bojaPoruke"></span>
+        <input type='text' id='username' name='username' placeholder='Korisničko ime'>
+
+        <span id="porukaPass" class="bojaPoruke"></span>
+        <input type='password' id='pass' name='pass' placeholder='Lozinka'>
+
+        <span id="porukaPassRep" class="bojaPoruke"></span>
+        <input type='password' id='passRep' name='passRep' placeholder='Ponovite lozinku'>
+        
+        <input type='submit' value='Registriraj se' name='registracija' id="slanje">
+    </form>
+    <script>
+        document.getElementById("slanje").onclick = function(event) {
+       
+        var slanjeForme = true;
+       
+        var poljeIme = document.getElementById("ime");
+        var ime = document.getElementById("ime").value;
+        if (ime.length == 0) {
+        slanjeForme = false;
+        poljeIme.style.border="1px dashed red";
+        document.getElementById("porukaIme").innerHTML="<br>Unesite ime!<br>";
+        } else {
+        poljeIme.style.border="1px solid green";
+        document.getElementById("porukaIme").innerHTML="";
+        }
+        var poljePrezime = document.getElementById("prezime");
+        var prezime = document.getElementById("prezime").value;
+        if (prezime.length == 0) {
+        slanjeForme = false;
+       
+        poljePrezime.style.border="1px dashed red";
+       
+       document.getElementById("porukaPrezime").innerHTML="<br>Unesite prezime!<br>";
+        } else {
+        poljePrezime.style.border="1px solid green";
+        document.getElementById("porukaPrezime").innerHTML="";
+        }
+       
+        var poljeUsername = document.getElementById("username");
+        var username = document.getElementById("username").value;
+        if (username.length == 0) {
+        slanjeForme = false;
+        poljeUsername.style.border="1px dashed red";
+       
+       document.getElementById("porukaUsername").innerHTML="<br>Unesite korisničko ime!<br>";
+        } else {
+        poljeUsername.style.border="1px solid green";
+        document.getElementById("porukaUsername").innerHTML="";
+        }
+       
+        var poljePass = document.getElementById("pass");
+        var pass = document.getElementById("pass").value;
+        var poljePassRep = document.getElementById("passRep");
+        var passRep = document.getElementById("passRep").value;
+        if (pass.length == 0 || passRep.length == 0 || pass != passRep) {
+        slanjeForme = false;
+        poljePass.style.border="1px dashed red";
+        poljePassRep.style.border="1px dashed red";
+        document.getElementById("porukaPass").innerHTML="<br>Lozinke moraju biti iste i ne smiju biti prazne!<br>";
+       
+       document.getElementById("porukaPassRep").innerHTML="<br>Lozinke moraju biti iste i ne smiju biti prazne!<br>";
+        } 
+        else {
+        poljePass.style.border="1px solid green";
+        poljePassRep.style.border="1px solid green";
+        document.getElementById("porukaPass").innerHTML="";
+        document.getElementById("porukaPassRep").innerHTML="";
+        }
+       
+        if (slanjeForme != true) {
+        event.preventDefault();
+        }
+       
+       
+        };
+       
+        </script>
+</body>
+</html>

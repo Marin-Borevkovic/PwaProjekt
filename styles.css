@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+header{
+    background-color: #f00;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.bottom-bar {
+    display: flex;
+    background-color: red;
+    align-items: flex-start;
+    padding: 5px 0;
+    padding: 0 0 10px 10px;
+}
+.vl {
+    border-left: 1px solid lightgray;
+    height: auto;
+}
+h1{
+    font-weight: 600;
+    font-size: 4rem;
+    padding-top: 10px;
+}
+ul{
+    width: 1100px;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    position: relative;
+    
+}
+nav{
+    background-color: white;
+    padding: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+nav ul li {
+    margin: 0 30px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.content{
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+hr{
+    width: 1200px;
+    margin: 20px auto 0;
+    opacity: 30%;
+}
+.sport,.politika,.kultura,.zabava{
+    color: red;
+}
+.crvena{
+    color: red;
+}
+
+img{
+    object-fit: cover;
+}
+h2{
+    padding-top:40px;
+}
+.b-container img{
+    width: 100%;
+    height: 250px;
+}
+.b-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+.b-container article{
+    font-size: medium;
+    width: 30%;
+    
+}
+
+
+footer{
+    width: 1250px;
+    margin: 100px auto 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 1px solid lightgrey;
+}
+footer p{
+    padding: 2px 10px 2px 0;
+    font-size: small;
+}
+footer hr{
+    margin-top: 10px;
+    width: 1250px;
+    opacity: 80%;
+}
+.slika img{
+    height:400px;
+    object-fit: cover;
+}
+.kategorija_clanak{
+    width: 100px;
+    height: 30px;
+    margin: 30px 0 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    font-weight: normal;
+}
+.drop-cap{
+    initial-letter: 4;
+    margin-right: 0.75rem;
+}
+.hero{
+    text-align: left;
+}
+.hero h1{
+    margin: 0 auto;
+    text-align: left;
+    font-size: 2.2rem;
+    padding: 20px 0;
+}
+.hero h2{
+    color: red;
+    text-transform: capitalize;
+}
+.hero p{
+    padding: 20px 0;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.text p{
+    padding: 20px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+.text p::first-letter{
+    initial-letter: 2;
+    margin-right: 0.5rem;
+}
+
+.text{
+    margin-bottom: 20px;
+}
+.slika,.text,.hero{
+    display: flex;
+    flex-direction: column;
+}
+.forma{
+   display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+input{
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+button{
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #000;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    
+}
+button:hover{
+    background-color: #fff;
+    color: black;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+button:active{
+    background-color: #000;
+    color: white;
+    border: 1px solid #000;
+}
+.buttons{
+    margin-top: 10px;
+}
+select{
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.novi{
+    
+    padding: 10px 0;
+}
+.novi p:nth-child(1){
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.poruka{
+    color: red;	
+}
+.novi p{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.adminforma{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    width: 35vw;
+    justify-content: left;
+    margin: 50px 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.adminforma_unutra{
+    margin: 15px 0 5px;
+}
+textarea,input{
+    font-size: 0.9rem;
+    padding: 5px 0 5px 5px;
+}
+.content-admini{
+    width: 1250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content-admini input[type="file"],.content-admini input[type="checkbox"]{
+    width:250px;
+    display: inline;
+    border: none;
+}
+.registracija{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    width: 500px;
+    height: 800px;
+    justify-content: left;
+    margin: 20px;
+    margin:0 auto;
+    justify-items: center;
+}
+input[type="submit"],input[type="reset"]{
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #000;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    
+}
+input[type="submit"]:hover,input[type="reset"]:hover{
+    background-color: #fff;
+    color: black;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+.content-admini input[type="submit"],.content-admini input[type="reset"]{
+  width: 100%;
+}
+.container{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.prijavaforma{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    width: 500px;
+    height: 800px;
+    justify-content: left;
+    margin: 20px;
+    margin:0 auto;
+    justify-items: center;
+}
+@media screen and (max-width:900px){
+    .b-container
+    {
+        flex-wrap: wrap;
+    }
+    *
+    {
+        margin:0 auto;
+    }
+    body
+    {
+        overflow-x:hidden;
+
+    }
+    img
+    {
+        max-width: 90%;
+        height: auto;
+    }
+    ul::after
+    {
+        width:2000px;
+    }
+    .hero h1
+{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1rem;
+    width:80%;
+    padding: 20px 0;
+}
+}
+@media screen and (max-width:420px)
+{
+    ul{display: none;}
+}
